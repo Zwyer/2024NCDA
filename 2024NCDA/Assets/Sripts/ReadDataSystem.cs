@@ -21,7 +21,7 @@ public class ReadDataSystem : MonoBehaviour
         CardInfo = Resources.Load<TextAsset>("GameData/CardInfo");
         CardInfoRaw = CardInfo.text.Split('\n');
         CardInfoEachRow = new string[CardInfoRaw.Length][];
-        for (int i = 0; i < CardInfoRaw.Length - 1; i++)
+        for (int i = 0; i < CardInfoRaw.Length; i++)
         {
             CardInfoEachRow[i] = CardInfoRaw[i].Split(',');
         }
