@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Cards : MonoBehaviour
 {
     public int ID;
@@ -28,3 +29,5 @@ public class Cards : MonoBehaviour
         tPRICE = 0;
     }
 }
+
+
