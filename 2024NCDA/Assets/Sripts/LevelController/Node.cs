@@ -12,12 +12,14 @@ public class Node : MonoBehaviour
     private Animator CircleAni;
     public int ID,Lv,Type;
     private SpriteRenderer sr;
+    private Color afterColor;
     
     void Start()
     {
         AniCircle = transform.Find("AniCircle").gameObject;
         CircleAni = AniCircle.GetComponent<Animator>();
         sr = gameObject.GetComponent<SpriteRenderer>();
+        afterColor = new Color(0.3f,0.3f,0.3f,0.8f);
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class Node : MonoBehaviour
     {
         if (Lv != LevelControl.curLv)
         {
-            sr.color = new Color(0.3f,0.3f,0.3f,0.8f);
+            sr.color = afterColor;
         }
     }
 
@@ -43,6 +45,7 @@ public class Node : MonoBehaviour
         if (Lv == LevelControl.curLv)
         {
             Debug.Log("IntoThisLv,ID="+ID+" LV="+Lv+" Type="+Type);
+            afterColor = new Color(0, 0.8f, 0, 0.8f);
             //如果完成了
             LevelControl.hasFinishCurLv = true;
         }
